@@ -12,7 +12,7 @@ const Difficulty = function(config) {
   // this.spy = 0;
 
   // Difficulty Variables
-  this.maxSize = 60 / _this.config.targetTime * _this.config.cacheTime;
+  this.maxSize = _this.config.cacheTime / _this.config.targetTime;
   this.maxBoundary = 1 + _this.config.variance;
   this.minBoundary = 1 - _this.config.variance;
 
