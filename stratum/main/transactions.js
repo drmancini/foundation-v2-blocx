@@ -64,7 +64,7 @@ const Transactions = function(config, rpcData) {
     }
 
     // Calculate Coin Block Reward
-    let reward = rpcData.coinbasevalue;
+    let reward = _this.rpcData.coinbasevalue;
 
     // Handle Pool/Coinbase Addr/Flags
     const poolAddressScript = utils.addressToScript(_this.config.primary.address, network);
@@ -133,6 +133,20 @@ const Transactions = function(config, rpcData) {
       });
     }
 
+    // Handle Devfee Transactions
+    if (_this.rpcData.devfee) {
+      const devfeeReward = _this.rpcData.devfee.amount;
+      let devfeeScript;
+      if (_this.rpcData.devfee.script) devfeeScript = Buffer.from(_this.rpcData.devfee.script, 'hex');
+      else devfeeScript = utils.addressToScript(_this.rpcData.devfee.payee, network);
+      reward -= devfeeReward;
+      txOutputBuffers.push(Buffer.concat([
+        utils.packUInt64LE(devfeeReward),
+        utils.varIntBuffer(devfeeScript.length),
+        devfeeScript,
+      ]));
+    } 
+    
     // Handle Recipient Transactions
     let recipientTotal = 0;
     _this.config.primary.recipients.forEach((recipient) => {
