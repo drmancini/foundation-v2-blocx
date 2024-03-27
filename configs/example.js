@@ -1,6 +1,6 @@
 /*
  *
- * Example (Blocx)
+ * Example (Osmium)
  *
  */
 
@@ -58,8 +58,8 @@ config.primary.address = '[address]';
 
 // Coin Configuration
 config.primary.coin = {};
-config.primary.coin.name = 'Blocx';
-config.primary.coin.symbol = 'BLOCX';
+config.primary.coin.name = 'Osmium';
+config.primary.coin.symbol = 'OSMI';
 config.primary.coin.algorithm = 'x11';
 
 // Daemon Configuration
@@ -82,7 +82,7 @@ config.primary.recipients.push(recipient1);
 
 // Blinkhash Donation Address
 const recipient2 = {};
-recipient2.address = 'BMcg7VTGHtQxgvN2ybX6TdSLZu33ep3GTj';
+recipient2.address = '[address]';
 recipient2.percentage = 0.001;
 config.primary.recipients.push(recipient2);
 

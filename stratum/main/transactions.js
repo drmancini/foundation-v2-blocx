@@ -16,11 +16,11 @@ const Transactions = function(config, rpcData) {
       public: Buffer.from('0488B21E', 'hex').readUInt32LE(0),
       private: Buffer.from('0488ADE4', 'hex').readUInt32LE(0),
     },
-    peerMagic: 'ee88063f',
-    pubKeyHash: Buffer.from('19', 'hex').readUInt8(0),
-    scriptHash: Buffer.from('1A', 'hex').readUInt8(0),
-    wif: Buffer.from('99', 'hex').readUInt8(0),
-    coin: 'blocx',
+    peerMagic: '4f534d49',
+    pubKeyHash: Buffer.from('3f', 'hex').readUInt8(0),
+    scriptHash: Buffer.from('0f', 'hex').readUInt8(0),
+    wif: Buffer.from('4b', 'hex').readUInt8(0),
+    coin: 'osmi',
   };
 
   // Testnet Configuration
@@ -30,11 +30,11 @@ const Transactions = function(config, rpcData) {
       public: Buffer.from('043587CF', 'hex').readUInt32LE(0),
       private: Buffer.from('04358394', 'hex').readUInt32LE(0),
     },
-    peerMagic: '9955083E',
-    pubKeyHash: Buffer.from('4B', 'hex').readUInt8(0),
-    scriptHash: Buffer.from('4C', 'hex').readUInt8(0),
-    wif: Buffer.from('CB', 'hex').readUInt8(0),
-    coin: 'blocx',
+    peerMagic: '744f534d',
+    pubKeyHash: Buffer.from('7d', 'hex').readUInt8(0),
+    scriptHash: Buffer.from('0c', 'hex').readUInt8(0),
+    wif: Buffer.from('ef', 'hex').readUInt8(0),
+    coin: 'tosmi',
   };
 
   // Calculate Generation Transaction
